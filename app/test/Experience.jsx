@@ -5,7 +5,7 @@ export default function Experience() {
     return <>
 
         <color args={['#bdedfc']} attach="background" />
-        <ambientLight intensity={0.5} castShadow />
+        <ambientLight intensity={0.5} />
         <directionalLight
             castShadow
             position={[5, 10, 5]}
