@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
@@ -16,25 +16,22 @@ export default function Character() {
         }
     });
 
-
-    useEffect(() => {
-        if (animations) {
-            console.log("Loaded animations:", animations.map(anim => anim.name));
-        }
-
-        if (actions && actions['Armature.001|Armature.001Action']) {
-            actions['Armature.001|Armature.001Action'].play();
-        } else {
-            console.warn("Animation 'Armature.001|Armature.001Action' not found. Check name.");
-        }
-    }, [actions, animations]);
-
     useFrame((state, delta) => {
         if (!body.current) return;
         const { forward, backward } = getKeys();
 
         const speed = 1.5 * delta;
         body.current.position.x += forward ? speed : backward ? -speed : 0;
+
+        if (forward || backward) {
+            actions['Armature.001|Armature.001Action'].play();
+        } else {
+            actions['Armature.001|Armature.001Action'].stop();
+        }
+
+        let rotationY = Math.PI * 3 / 2;
+        if (backward) rotationY *= -1;
+        body.current.rotation.y = rotationY
     });
 
     return (
