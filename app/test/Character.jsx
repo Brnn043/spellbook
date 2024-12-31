@@ -23,7 +23,7 @@ export default function Character() {
         const speed = 1.5 * delta;
         body.current.position.x += forward ? speed : backward ? -speed : 0;
 
-        if (forward || backward) {
+        if (actions && (forward || backward)) {
             actions['Armature.001|Armature.001Action'].play();
         } else {
             actions['Armature.001|Armature.001Action'].stop();

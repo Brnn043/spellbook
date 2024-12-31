@@ -1,6 +1,7 @@
 import { Physics } from "@react-three/rapier"
 import Floor from "./Floor"
 import Character from "./Character"
+import Wall from "./Wall"
 export default function Experience() {
     return <>
 
@@ -23,6 +24,7 @@ export default function Experience() {
         {/* <Physics debug> */}
         <Floor />
         <Character />
+        <Wall />
         {/* </Physics> */}
     </>
 }
