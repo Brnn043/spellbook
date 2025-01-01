@@ -1,8 +1,5 @@
-import { Physics } from "@react-three/rapier"
-import Floor from "./Floor"
-import Character from "./Character"
-import Wall from "./Wall"
-import Hallway from "./Hallway"
+import Character from "../src/components/Character"
+import Hallway from "../src/components/Hallway"
 export default function Experience() {
     return <>
 
@@ -22,12 +19,7 @@ export default function Experience() {
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
         />
-        {/* <pointLight position-y={3} intensity={10} castShadow /> */}
-        {/* <Physics debug> */}
-        {/* <Floor /> */}
         <Character />
-        {/* <Wall /> */}
         <Hallway />
-        {/* </Physics> */}
     </>
 }

@@ -17,7 +17,7 @@ export default function Character() {
         }
 
         if (child.material) {
-            child.material.emissive = new THREE.Color(0xbc5cff); // Green emissive color
+            child.material.emissive = new THREE.Color(0xbc5cff);
             child.material.emissiveIntensity = 1;
         }
     });

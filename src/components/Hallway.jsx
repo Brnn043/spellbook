@@ -34,7 +34,7 @@ export default function Hallway() {
     return (
         <>
             <group>
-                <primitive object={model.scene} scale={0.7} position={[-27, 0.6, 8.5]} />
+                <primitive object={model.scene} scale={0.7} position={[-27, 0.615, 8.5]} />
             </group>
         </>
     );
