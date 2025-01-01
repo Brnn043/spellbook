@@ -3,7 +3,7 @@ import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from 'three'
 
-export default function Character({ controls }) {
+export default function Character({ controls, openModal }) {
     const body = useRef();
     const [subscribeKeys, getKeys] = useKeyboardControls();
     const { scene, animations } = useGLTF('/scene.gltf');
@@ -24,6 +24,7 @@ export default function Character({ controls }) {
 
     useFrame((state, delta) => {
         if (!body.current) return;
+        if (openModal) return;
         let { forward, backward } = getKeys();
 
         forward = forward || controls.forward;
