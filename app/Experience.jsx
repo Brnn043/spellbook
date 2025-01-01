@@ -1,6 +1,6 @@
 import Character from "../src/components/Character"
 import Hallway from "../src/components/Hallway"
-export default function Experience() {
+export default function Experience({ controls }) {
     return <>
 
         <color args={['#000000']} attach="background" />
@@ -19,7 +19,7 @@ export default function Experience() {
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
         />
-        <Character />
+        <Character controls={controls} />
         <Hallway />
     </>
 }
