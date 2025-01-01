@@ -29,11 +29,11 @@ export default function Character({ controls }) {
         forward = forward || controls.forward;
         backward = backward || controls.backward;
 
-        console.log(forward, backward);
-
-
         const speed = 2 * delta;
-        body.current.position.x += forward ? speed : backward ? -speed : 0;
+
+        const positionX = body.current.position.x + (forward ? speed : backward ? -speed : 0);
+
+        if (!(positionX < -0.8 || positionX > 26)) body.current.position.x = positionX;
 
         if (actions && (forward || backward)) {
             actions['Armature.001|Armature.001Action'].play();
@@ -53,7 +53,7 @@ export default function Character({ controls }) {
                 ref={body}
                 object={scene}
                 scale={0.5}
-                position={[0, 0, 0]}
+                position={[0.3, 0, 0]}
                 rotation-y={Math.PI * 3 / 2}
                 castShadow
             />
