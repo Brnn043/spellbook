@@ -1,6 +1,7 @@
 import Bedroom from "@/components/profile/Bedroom";
+import { QuestionMark } from "@/components/QuestionMark";
 
-export default function Experience() {
+export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInterest, setOpenSkills }) {
     return <>
         <ambientLight intensity={0.5} color="#f8eaff" />
         <directionalLight
@@ -18,5 +19,13 @@ export default function Experience() {
             shadow-camera-bottom={-15}
         />
         <Bedroom />
+        {/* Bed */}
+        <QuestionMark position={[-0.75, 1.5, 0.5]} setOpen={setOpenInterest} />
+        {/* Broom */}
+        <QuestionMark position={[-1, 1.5, 2]} setOpen={setOpenEducation} />
+        {/* Mirror */}
+        <QuestionMark position={[0.65, 2.2, -0.3]} setOpen={setOpenKnowMe} />
+        {/* Hat */}
+        <QuestionMark position={[1.65, 2.85, -1]} setOpen={setOpenSkills} />
     </>
 }

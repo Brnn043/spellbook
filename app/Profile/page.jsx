@@ -6,10 +6,10 @@ import { KnowMe, Education, Interest, Skills } from "@/components/profile/Modal"
 import { useState } from "react";
 
 export default function Profile() {
-    const [openKnowMe, setOpenKnowMe] = useState(true);
-    const [openEducation, setOpenEducation] = useState(true);
-    const [openInterest, setOpenInterest] = useState(true);
-    const [openSkills, setOpenSkills] = useState(true);
+    const [openKnowMe, setOpenKnowMe] = useState(false);
+    const [openEducation, setOpenEducation] = useState(false);
+    const [openInterest, setOpenInterest] = useState(false);
+    const [openSkills, setOpenSkills] = useState(false);
 
     return <>
         <div className='absolute top-0 left-0 w-full h-full z-10 bg-black'>
@@ -23,14 +23,14 @@ export default function Profile() {
                 }}
             >
                 <OrbitControls />
-                <Experience />
+                <Experience setOpenKnowMe={setOpenKnowMe} setOpenEducation={setOpenEducation} setOpenInterest={setOpenInterest} setOpenSkills={setOpenSkills} />
             </Canvas>
         </div>
 
 
-        {/* {openKnowMe && <KnowMe setOpen={setOpenKnowMe} />} */}
-        {/* {openEducation && <Education setOpen={setOpenEducation} />} */}
-        {/* {openInterest && <Interest setOpen={setOpenInterest} />} */}
+        {openKnowMe && <KnowMe setOpen={setOpenKnowMe} />}
+        {openEducation && <Education setOpen={setOpenEducation} />}
+        {openInterest && <Interest setOpen={setOpenInterest} />}
         {openSkills && <Skills setOpen={setOpenSkills} />}
     </>
 }

@@ -22,8 +22,6 @@ export default function Bedroom() {
                     child.castShadow = true;
                     child.receiveShadow = true;
                 }
-                console.log(model);
-
             });
         }
     }, [model, texture]);
