@@ -11,7 +11,7 @@ export default function MoveButton({ setControls }) {
             onTouchEnd={() => handleControl('backward', false)}
             className="w-28 h-12 flex items-center justify-center text-center text-base bg-white text-black border-2 border-black rounded-full hover:bg-gray-100 focus:outline-none"
         >
-            Backward
+            Left
         </button>
         <button
             tabIndex={-1}
@@ -21,7 +21,7 @@ export default function MoveButton({ setControls }) {
             onTouchEnd={() => handleControl('forward', false)}
             className="w-28 h-12 flex items-center justify-center text-center text-base bg-white text-black border-2 border-black rounded-full hover:bg-gray-100 focus:outline-none"
         >
-            Forward
+            Right
         </button>
     </div>
 }
