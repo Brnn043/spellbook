@@ -3,16 +3,17 @@ import MoveButton from '@/components/MoveButton';
 import Experience from './Experience';
 import { KeyboardControls, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Visit from '@/components/Visit';
+import { useDoorTracker } from '@/components/useDoorTracker';
+import { Door } from '@/utils/Door';
 
 export default function Page() {
   const [controls, setControls] = useState({ forward: false, backward: false });
-  const [openProfile, setOpenProfile] = useState(true);
-  const [openProject, setOpenProject] = useState(true);
-  const [openActivity, setOpenActivity] = useState(true);
+  const doors = Door();
 
-  const isOpen = openProfile || openProfile || openActivity;
+  const { activeModal, checkDoorTrigger, closeModal } = useDoorTracker(doors);
+  const isOpen = activeModal !== null
 
   return (
     <>
@@ -33,15 +34,15 @@ export default function Page() {
             }}
           >
             <OrbitControls />
-            <Experience controls={controls} openModal={isOpen} />
+            <Experience controls={controls} openModal={isOpen} checkDoorTrigger={checkDoorTrigger} />
           </Canvas>
         </KeyboardControls>
       </div>
 
       <MoveButton setControls={setControls} />
-      {openProfile && <Visit name={'Profile'} setOpen={setOpenProfile} />}
-      {openProject && <Visit name={'Project'} setOpen={setOpenProject} />}
-      {openActivity && <Visit name={'Activity'} setOpen={setOpenActivity} />}
+      {activeModal === "profile" && <Visit name="Profile" setOpen={closeModal} />}
+      {activeModal === "project" && <Visit name="Project" setOpen={closeModal} />}
+      {activeModal === "activity" && <Visit name="Activity" setOpen={closeModal} />}
     </>
   );
 }
