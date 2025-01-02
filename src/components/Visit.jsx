@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 export default function Visit({ name, setOpen }) {
-    console.log(name, ' is shown');
 
     const handleClick = () => {
         setOpen(false);

@@ -5,7 +5,7 @@ export default function Experience({ controls, openModal, checkDoorTrigger }) {
     return <>
 
         <color args={['#000000']} attach="background" />
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.5} color="#ecc7ff" />
         <directionalLight
             castShadow
             name="shadowLight"
