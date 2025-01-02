@@ -3,7 +3,7 @@ import MoveButton from '@/components/MoveButton';
 import Experience from './Experience';
 import { KeyboardControls, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Visit from '@/components/Visit';
 import { useDoorTracker } from '@/components/useDoorTracker';
 import { Door } from '@/utils/Door';
@@ -17,9 +17,11 @@ export default function Page() {
   const { activeModal, checkDoorTrigger, closeModal } = useDoorTracker(doors);
   const isOpen = activeModal !== null
 
+  const [showWelcome, setShowWelcome] = useState(true)
+
   return (
     <>
-      <div className='absolute top-0 left-0 w-full h-full z-10'>
+      <div className='absolute top-0 left-0 w-full h-full z-10 bg-black'>
         <KeyboardControls
           map={[
             { name: 'forward', keys: ['ArrowRight', 'KeyD'] },
@@ -45,8 +47,8 @@ export default function Page() {
       {activeModal === "profile" && <Visit name="Profile" setOpen={closeModal} />}
       {activeModal === "project" && <Visit name="Project" setOpen={closeModal} />}
       {activeModal === "activity" && <Visit name="Activity" setOpen={closeModal} />}
-      <WelcomeModal />
-      <HintMessage />
+      {showWelcome && <WelcomeModal setShowWelcome={setShowWelcome} />}
+      {!showWelcome && <HintMessage />}
     </>
   );
 }
