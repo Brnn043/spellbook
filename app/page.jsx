@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import Visit from '@/components/Visit';
 import { useDoorTracker } from '@/components/useDoorTracker';
 import { Door } from '@/utils/Door';
+import WelcomeModal from '@/components/WelcomeModal';
 
 export default function Page() {
   const [controls, setControls] = useState({ forward: false, backward: false });
@@ -43,6 +44,7 @@ export default function Page() {
       {activeModal === "profile" && <Visit name="Profile" setOpen={closeModal} />}
       {activeModal === "project" && <Visit name="Project" setOpen={closeModal} />}
       {activeModal === "activity" && <Visit name="Activity" setOpen={closeModal} />}
+      <WelcomeModal />
     </>
   );
 }

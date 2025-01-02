@@ -11,7 +11,7 @@ export default function Visit({ name, setOpen }) {
 
     return (
         <>
-            <div className="fixed w-full h-full flex justify-center items-center z-30">
+            <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
                 <div className="bg-amber-300 flex flex-col justify-center items-center p-6 border-2 border-black rounded-xl space-y-4">
                     <p>Want to visit {name}?</p>
                     <div className="flex space-x-4">
