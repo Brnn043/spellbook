@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from 'three'
@@ -9,6 +9,9 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
     const { scene, animations } = useGLTF('/scene.gltf');
 
     const { actions } = useAnimations(animations, scene);
+
+    const [smoothedCameraPosition] = useState(() => new THREE.Vector3(10, 10, 10))
+    const [smoothedCameraTarget] = useState(() => new THREE.Vector3())
 
     scene.traverse((child) => {
         if (child.isMesh) {
@@ -50,6 +53,27 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
         body.current.rotation.y = rotationY
 
         checkDoorTrigger(body.current.position.x);
+
+        /**
+         * Camera
+         */
+
+        const cameraPosition = new THREE.Vector3()
+        cameraPosition.copy(body.current.position)
+        cameraPosition.x += 1
+        cameraPosition.z += 2.2
+        cameraPosition.y += 1
+
+        const cameraTarget = new THREE.Vector3()
+        cameraTarget.copy(body.current.position)
+        cameraTarget.x += 0.4
+        cameraTarget.y += 0.7
+
+        smoothedCameraPosition.lerp(cameraPosition, 5 * delta)
+        smoothedCameraTarget.lerp(cameraTarget, 5 * delta)
+
+        state.camera.position.copy(cameraPosition)
+        state.camera.lookAt(cameraTarget)
 
     });
 

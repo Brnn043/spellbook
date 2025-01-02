@@ -37,7 +37,7 @@ export default function Page() {
               position: [2.5, 4, 6],
             }}
           >
-            <OrbitControls />
+            {/* <OrbitControls /> */}
             <Experience controls={controls} openModal={isOpen} checkDoorTrigger={checkDoorTrigger} />
           </Canvas>
         </KeyboardControls>
