@@ -9,7 +9,7 @@ export default function Project() {
     const [openWebsite, setOpenWebsite] = useState(false);
     const [openGameDev, setOpenGameDev] = useState(false);
     const [openCompetitive, setOpenCompetitive] = useState(false);
-    const [openOthers, setOpenOthers] = useState(true);
+    const [openOthers, setOpenOthers] = useState(false);
 
     return <>
         <div className='absolute top-0 left-0 w-full h-full z-10 bg-black'>

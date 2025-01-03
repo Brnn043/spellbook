@@ -8,14 +8,23 @@ export const QuestionMark = ({ position, setOpen }) => {
 
     useFrame(() => {
         if (questionMarkRef.current) {
-            questionMarkRef.current.lookAt(camera.position);  // Make it always face the camera
+            questionMarkRef.current.lookAt(camera.position);
         }
     });
 
     const handleClick = () => {
-        console.log('clicked');
+        console.log("clicked");
+        setOpen(true);
+    };
 
-        setOpen(true);  // Handle interaction on click
+    const handlePointerOver = (e) => {
+        e.stopPropagation();
+        document.body.style.cursor = "pointer";
+    };
+
+    const handlePointerOut = (e) => {
+        e.stopPropagation();
+        document.body.style.cursor = "default";
     };
 
     return (
@@ -23,12 +32,14 @@ export const QuestionMark = ({ position, setOpen }) => {
             ref={questionMarkRef}
             position={position}
             onClick={handleClick}
+            onPointerOver={handlePointerOver}
+            onPointerOut={handlePointerOut}
             scale={0.6}
         >
             <spriteMaterial
                 attach="material"
-                map={new THREE.TextureLoader().load('/question.webp')}  // Load texture from the path
+                map={new THREE.TextureLoader().load("/question.webp")}
             />
-        </sprite >
+        </sprite>
     );
 };
