@@ -45,25 +45,25 @@ export const ProjectModal = ({ title, setOpen, data }) => {
                 {/* Game Content */}
                 <div className="p-4">
                     {/* Navigation Buttons */}
-                    <div className="flex justify-between items-center mb-4 font-karla text-thisBlack text-xl">
-                        <button
+                    <div className={`flex ${data.length > 1 ? 'justify-between' : 'justify-center'} items-center mb-4 font-karla text-thisBlack text-xl`}>
+                        {data.length > 1 && <button
                             onClick={handlePrevGame}
                             className="px-4 py-2 bg-[#f3bfe1] hover:bg-[#ef9ad2] text-white rounded-full"
                         >
                             &lt;
-                        </button>
-                        <h3 className="font-karla text-lg">{data[currentPage].title}</h3>
-                        <button
+                        </button>}
+                        <h3 className="font-karla text-lg text-center">{data[currentPage].title}</h3>
+                        {data.length > 1 && <button
                             onClick={handleNextGame}
                             className="px-4 py-2 bg-lightPink hover:bg-[#ef9ad2] text-white rounded-full"
                         >
                             &gt;
-                        </button>
+                        </button>}
                     </div>
 
                     {/* Image Slider */}
                     <div className="flex flex-row justify-center items-center space-x-3">
-                        <div className="relative mb-4 flex justify-center items-center">
+                        <div className="relative mb-4 flex justify-center items-center h-64 bg-slate-200 rounded-xl overflow-hidden">
                             <img
                                 src={data[currentPage].images[currentImage]}
                                 alt="Game Image"
