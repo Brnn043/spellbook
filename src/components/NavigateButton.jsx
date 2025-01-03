@@ -4,10 +4,6 @@ export const NavigateButton = () => {
     const [isPressedVisit, setIsPressedVisit] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    const [isPressedProfile, setIsPressedProfile] = useState(false);
-    const [isPressedProject, setIsPressedProject] = useState(false);
-    const [isPressedActivity, setIsPressedActivity] = useState(false);
-
     return (
         <div className="fixed top-4 right-4 z-10 flex flex-col justify-center items-center">
             <div className="w-24 space-y-4">
@@ -32,36 +28,21 @@ export const NavigateButton = () => {
                         <a
                             href="/Profile"
                             onClick={() => setIsOpen(false)}
-                            onMouseDown={() => setIsPressedProfile(true)}
-                            onMouseUp={() => setIsPressedProfile(false)}
-                            onTouchStart={() => setIsPressedProfile(true)}
-                            onTouchEnd={() => setIsPressedProfile(false)}
-                            className={`w-24 py-2 border-2 text-thisBlack text-center rounded-full relative overflow-hidden transition-all ${isPressedProfile ? "bg-gradientcustom border-white" : "bg-gradientcustom2 border-thisBlack"
-                                }`}
+                            className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
                         >
                             Profile
                         </a>
                         <a
                             href="/Project"
                             onClick={() => setIsOpen(false)}
-                            onMouseDown={() => setIsPressedProject(true)}
-                            onMouseUp={() => setIsPressedProject(false)}
-                            onTouchStart={() => setIsPressedProject(true)}
-                            onTouchEnd={() => setIsPressedProject(false)}
-                            className={`w-24 py-2 border-2 text-thisBlack text-center rounded-full relative overflow-hidden transition-all ${isPressedProfile ? "bg-gradientcustom border-white" : "bg-gradientcustom2 border-thisBlack"
-                                }`}
+                            className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
                         >
                             Project
                         </a>
                         <a
                             href="/Activity"
                             onClick={() => setIsOpen(false)}
-                            onMouseDown={() => setIsPressedActivity(true)}
-                            onMouseUp={() => setIsPressedActivity(false)}
-                            onTouchStart={() => setIsPressedActivity(true)}
-                            onTouchEnd={() => setIsPressedActivity(false)}
-                            className={`w-24 py-2 border-2 text-thisBlack text-center rounded-full relative overflow-hidden transition-all ${isPressedProfile ? "bg-gradientcustom border-white" : "bg-gradientcustom2 border-thisBlack"
-                                }`}
+                            className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
                         >
                             Activity
                         </a>
