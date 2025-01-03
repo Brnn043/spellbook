@@ -135,6 +135,7 @@ export const Skills = ({ setOpen }) => {
                                 <ul className="list-disc pl-5">
                                     <li>Advanced Level (C1) in English, certified by Stafford House</li>
                                     <li>Currently practicing Japanese</li>
+                                    <li>Native speaker, Thai language</li>
                                 </ul>
                             </div>
                         )}
