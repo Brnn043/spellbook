@@ -123,6 +123,9 @@ export const Skills = ({ setOpen }) => {
                                 <h4 className="font-semibold mt-2">UI Frameworks:</h4>
                                 <p>Tailwind CSS</p>
 
+                                <h4 className="font-semibold mt-2">Game Development & 3D Tools:</h4>
+                                <p>Unity, Blender</p>
+
                                 <h4 className="font-semibold mt-2">Version Control:</h4>
                                 <p>Git, GitHub</p>
                             </div>
