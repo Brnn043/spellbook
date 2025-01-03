@@ -104,44 +104,14 @@ export const NavigateButton = () => {
 };
 
 export const BackButton = () => {
-    const [isPressed, setIsPressed] = useState(false);
-
     return (
         <div className="fixed top-10 md:top-7 z-10 left-7">
             <a
                 href="/"
-                className={`text-thisBlack font-karla text-lg md:text-base border-2 px-4 py-2 rounded-2xl relative overflow-hidden transition-all duration-200 ${isPressed ? "bg-gradientcustom" : "bg-gradientcustom2"
-                    }`}
-                onMouseDown={() => setIsPressed(true)}
-                onMouseUp={() => setIsPressed(false)}
-                onTouchStart={() => setIsPressed(true)}
-                onTouchEnd={() => setIsPressed(false)}
+                className="text-thisBlack font-karla text-lg md:text-base border-2 px-4 py-2 rounded-2xl relative overflow-hidden transition-all duration-200 bg-gradientcustom2 border-thisBlack hover:bg-gradientcustom hover:border-white"
             >
                 Back to hallway
             </a>
-
-            <style jsx>{`
-                a::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: rgba(0, 0, 0, 0.1); /* Set fill color */
-                    width: 0%;
-                    transition: width 0.5s ease-in-out;
-                    z-index: 0;
-                }
-
-                a:hover::before {
-                    width: 100%;
-                }
-
-                a:hover {
-                    background-color: rgba(236, 199, 255, 0.2); /* Transparent purple fill */
-                }
-            `}</style>
         </div>
     );
 };
