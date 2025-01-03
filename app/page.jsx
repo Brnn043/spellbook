@@ -9,6 +9,7 @@ import { useDoorTracker } from '@/components/useDoorTracker';
 import { Door } from '@/utils/Door';
 import WelcomeModal from '@/components/WelcomeModal';
 import HintMessage from '@/components/HintMessage';
+import { NavigateButton } from '@/components/NavigateButton';
 
 export default function Page() {
   const [controls, setControls] = useState({ forward: false, backward: false });
@@ -49,6 +50,8 @@ export default function Page() {
       {activeModal === "activity" && <Visit name="Activity" setOpen={closeModal} />}
       {showWelcome && <WelcomeModal setShowWelcome={setShowWelcome} />}
       {!showWelcome && <HintMessage />}
+
+      <NavigateButton />
     </>
   );
 }
