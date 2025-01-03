@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Modal1 } from "../GlobalModal";
+import { ProjectModal } from "../GlobalModal";
 
 export const Website = ({ setOpen }) => {
     const sentences = [
@@ -77,7 +77,7 @@ export const GameDev = ({ setOpen }) => {
         },
     ];
 
-    return <Modal1 title={'Game Development'} setOpen={setOpen} data={gameData} />
+    return <ProjectModal title={'Game Development'} setOpen={setOpen} data={gameData} />
 };
 
 

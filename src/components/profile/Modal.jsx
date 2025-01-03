@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { InfoModal } from "../GlobalModal";
 
 export const KnowMe = ({ setOpen }) => {
     const sentences = [
@@ -48,54 +49,23 @@ export const KnowMe = ({ setOpen }) => {
 }
 
 export const Education = ({ setOpen }) => {
-    return (
-        <>
-            <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-                <div className="bg-white border-2 border-black rounded-xl p-6 flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
-                    <div>
-                        <h1>Education</h1>
-                        <h2>Sci-Math program, Saint Joseph Convent</h2>
-                        <h2>Computer Engineering, Chulalongkorn university</h2>
-                    </div>
-                    <div className="flex justify-center items-center">
-                        <button
-                            onClick={() => setOpen(false)}
-                            className="bg-blue-500 hover:bg-blue-400 text-white border-2 border-black px-4 py-2 rounded-lg"
-                        >
-                            close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+    const data = [
+        "Sci-Math Program, Saint Joseph Convent School",
+        "Computer Engineering , Chulalongkorn University"
+    ];
+
+    return <InfoModal title={'Education'} setOpen={setOpen} data={data} />
 }
 
 export const Interest = ({ setOpen }) => {
-    return (
-        <>
-            <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-                <div className="bg-white border-2 border-black rounded-xl p-6 flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
-                    <div>
-                        <h1>Interest</h1>
-                        <h2>Web development</h2>
-                        <h2>Game development</h2>
-                        <h2>Augmented Reality/Virtual Reality</h2>
-                        <h2>Computer Graphics</h2>
-                        <h2>Artificial Intelligence</h2>
-                    </div>
-                    <div className="flex justify-center items-center">
-                        <button
-                            onClick={() => setOpen(false)}
-                            className="bg-blue-500 hover:bg-blue-400 text-white border-2 border-black px-4 py-2 rounded-lg"
-                        >
-                            close
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+    const data = [
+        "Web development",
+        "Game development",
+        "Augmented reality / Virtual reality / Metaverse",
+        "Computer graphics",
+        "Artificial Intelligence"
+    ]
+    return <InfoModal title={'Interests'} setOpen={setOpen} data={data} />
 }
 
 export const Skills = ({ setOpen }) => {
