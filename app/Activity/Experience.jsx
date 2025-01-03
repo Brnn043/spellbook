@@ -1,6 +1,7 @@
 import ExploreRoom from "@/components/activity/ExploreRoom";
+import { QuestionMark } from "@/components/QuestionMark";
 
-export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInterest, setOpenSkills }) {
+export default function Experience({ setOpenWork }) {
     return <>
         <ambientLight intensity={0.5} color="#f8eaff" />
         <directionalLight
@@ -18,5 +19,7 @@ export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInt
             shadow-camera-bottom={-15}
         />
         <ExploreRoom />
+
+        <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} />
     </>
 }
