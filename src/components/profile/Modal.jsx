@@ -1,52 +1,93 @@
 import { useState } from "react";
 import { InfoModal } from "../GlobalModal";
 
+
 export const KnowMe = ({ setOpen }) => {
     const sentences = [
-        "Hello, I’m Raksakul Hiranas, but please feel free to call me Beam.",
-        "Born on July 2nd, 2005, I am currently in my 2nd year studying Computer Engineering at Chulalongkorn university.",
-        "I am an enthusiastic, hardworking, and passionate individual with a love for creativity.",
-        "I am someone who quickly adapts to new challenges and always seeks innovative solutions.",
+        "Hello, my name is Raksakul Hiranas but you can call me Beam!",
+        "Born on 2nd July, 2005, I am currently in my 2nd year studying Computer Engineering at Chulalongkorn University.",
+        "I am an enthusiastic, hardworking, and passionate individual with a love for creativity. I enjoy learning new things, accept challenges, and am very dedicated to my work.",
+        "I am driven by my passion for innovation and creativity, always striving to turn challenges into opportunities while seeking continuous growth in both my personal and academic life.",
         "When faced with difficulties, I rely on my dedication and commitment to push through and achieve success.",
-        'My motto is "Commitment is the key to success."'
+        "In my spare time, I like to do coding, drawing, dancing, and some other creative stuff!"
     ];
 
-    const [sentenceIndex, setSentenceIndex] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
 
-    const showNextSentences = () => {
-        setSentenceIndex((prevIndex) => {
-            const nextIndex = prevIndex + 2;
-            return nextIndex < sentences.length ? nextIndex : prevIndex;
-        });
-        if (sentenceIndex + 1 === sentences.length - 1) setOpen(false)
+    const isPrevDisabled = currentPage === 0;
+    const isNextDisabled = currentPage === Math.floor(sentences.length / 2) - 1;
+
+    const handlePrevGame = () => {
+        if (!isPrevDisabled) setCurrentPage(currentPage - 1);
+    };
+
+    const handleNextGame = () => {
+        if (!isNextDisabled) setCurrentPage(currentPage + 1);
     };
 
     return (
-        <>
-            <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-                <div className="bg-white border-2 border-black rounded-xl p-6 w-3/4 max-w-xl flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
-                    <img src="/Beam.webp" className="w-48" alt="Beam" />
-                    <div>
-                        <p className="text-base">
-                            {sentences[sentenceIndex]}
-                        </p>
-                        <p className="text-base mt-2">
-                            {sentences[sentenceIndex + 1]}
-                        </p>
+        <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
+            <div className="bg-gradientcustom2 border-2 p-7 space-x-4 border-thisBlack rounded-xl overflow-hidden w-3/4 max-w-xl flex flex-col md:flex-row relative justify-center items-center">
+                {/* Left Side Image */}
+                <div className="w-full h-36 md:w-1/3 md:h-full">
+                    <img
+                        src="/Beam.webp"
+                        alt="Beam"
+                        className="w-full h-full object-cover rounded-lg"
+                    />
+                </div>
+
+                {/* Right Side Content */}
+                <div className="w-full md:w-2/3 flex flex-col space-y-2 md:space-y-4 pt-6 md:pt-0">
+                    {/* Title */}
+                    <h3 className="text-thisBlack text-3xl font-bold text-center mb-4">Me</h3>
+
+                    {/* Close Button */}
+                    <button
+                        onClick={() => setOpen(false)}
+                        className="absolute top-0 right-2 md:top-4 md:right-4 font-karla bg-thisBlack text-white rounded-full h-8 w-8 flex justify-center items-center hover:bg-white hover:text-thisBlack transition"
+                    >
+                        X
+                    </button>
+
+                    {/* Content Display with Fixed Height */}
+                    <div className="flex flex-col space-y-3 md:h-60">
+                        {sentences.slice(currentPage * 2, currentPage * 2 + 2).map((sentence, index) => (
+                            <p key={index} className="text-thisBlack rounded text-base font-karla break-words px-1">
+                                {sentence}
+                            </p>
+                        ))}
                     </div>
-                    <div className="flex justify-center items-center pt-4 mt-4">
+
+                    {/* Navigation Buttons */}
+                    <div className="flex justify-between items-center mt-4 md:mt-auto font-karla text-thisBlack text-base py-2">
                         <button
-                            onClick={showNextSentences}
-                            className="bg-blue-500 hover:bg-blue-400 text-white border-2 border-black px-4 py-2 rounded-lg"
+                            onClick={handlePrevGame}
+                            disabled={isPrevDisabled}
+                            className={`px-4 py-2 rounded-full text-white ${isPrevDisabled
+                                ? "bg-gray-300 cursor-not-allowed"
+                                : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
+                                }`}
                         >
-                            Next
+                            &lt; Prev
+                        </button>
+                        <button
+                            onClick={handleNextGame}
+                            disabled={isNextDisabled}
+                            className={`px-4 py-2 rounded-full text-white ${isNextDisabled
+                                ? "bg-gray-300 cursor-not-allowed"
+                                : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
+                                }`}
+                        >
+                            Next &gt;
                         </button>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
-}
+};
+
 
 export const Education = ({ setOpen }) => {
     const data = [
@@ -72,7 +113,7 @@ export const Interest = ({ setOpen }) => {
 export const Skills = ({ setOpen }) => {
     const data = [
         {
-            title: 'Programming Languages',
+            title: 'Technical skills',
             content: [
                 {
                     title: 'Programming Languages',
@@ -84,7 +125,7 @@ export const Skills = ({ setOpen }) => {
                 },
                 {
                     title: 'Frameworks & Libraries',
-                    content: 'React, Next.js, Astro, Vue.js, Three.js, React-Three-Fiber'
+                    content: 'React, Next.js, Astro, Vue.js, Three.js, React-Three-Fiber etc.'
                 },
                 {
                     title: 'UI Frameworks',
@@ -92,7 +133,7 @@ export const Skills = ({ setOpen }) => {
                 },
                 {
                     title: 'Game Development & 3D Tools',
-                    content: 'Unity, Blender'
+                    content: 'Unity, Blender etc.'
                 },
                 {
                     title: 'Version Control',
@@ -165,12 +206,12 @@ export const Skills = ({ setOpen }) => {
                             </ul>
                         ) : (
                             data[currentPage].content.map((item, index) => (
-                                <div key={index} className="text-thisBlack rounded text-base font-karla">
+                                <div key={index} className="text-thisBlack rounded text-base font-karla flex justify-start items-center px-4">
                                     {/* Display Content Titles and Descriptions */}
                                     {typeof item === 'object' ? (
                                         <div>
-                                            <h4 className="font-bold">{item.title}</h4>
-                                            <p>{item.content}</p>
+                                            <h4 className="font-bold text-left">{item.title}</h4>
+                                            <p className="text-left">{item.content}</p>
                                         </div>
                                     ) : (
                                         <p>{item}</p>
