@@ -17,5 +17,16 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.bg-gradientcustom': {
+          background: 'linear-gradient(to bottom right, #a6a0ff, #d3a0ff, #fff9a0)',
+        },
+        '.bg-gradientcustom2': {
+          background: 'linear-gradient(to bottom right, #e0f0f9, #f6deec, #eeedb6)',
+        }
+      })
+    }
+  ],
 }

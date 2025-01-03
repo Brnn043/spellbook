@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "@/Profile/Experience";
 import { KnowMe, Education, Interest, Skills } from "@/components/profile/Modal";
 import { useState } from "react";
+import { BackButton } from "@/components/NavigateButton";
 
 export default function Profile() {
     const [openKnowMe, setOpenKnowMe] = useState(false);
@@ -32,5 +33,7 @@ export default function Profile() {
         {openEducation && <Education setOpen={setOpenEducation} />}
         {openInterest && <Interest setOpen={setOpenInterest} />}
         {openSkills && <Skills setOpen={setOpenSkills} />}
+
+        <BackButton />
     </>
 }

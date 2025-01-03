@@ -27,27 +27,27 @@ export default function WelcomeModal({ setShowWelcome }) {
 
     return (
         <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-            <div className="bg-white border-2 border-black rounded-xl p-6 w-3/4 max-w-xl flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
-                <div className="flex flex-col items-center justify-center">
+            <div className="bg-gradientcustom border-2 border-white rounded-xl p-6 w-3/4 max-w-xl flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
+                <div className="flex flex-col items-center justify-center space-y-2">
                     <img
                         src={character.image}
                         alt={character.name}
-                        className="max-w-[100px] rounded-sm"
+                        className="max-w-[100px] font-karla border-2 border-white rounded-md"
                     />
                     <div>
-                        <h2 className="text-sm font-semibold">{character.name}</h2>
+                        <h2 className="text-sm font-semibold font-karla">{character.name}</h2>
                     </div>
                 </div>
 
-                <div className="text-base break-words md:w-8/12">{sentences[sentenceIndex]}</div>
+                <div className="text-lg break-words md:w-8/12 font-karla">{sentences[sentenceIndex]}</div>
 
                 <div className="flex justify-center items-center pt-4 md:absolute md:bottom-4 md:right-4">
                     <button
                         onClick={nextSentence}
                         className={`${sentenceIndex === sentences.length - 1
-                            ? "bg-blue-500 hover:bg-blue-400 text-white"
-                            : "bg-white hover:bg-slate-200 text-black"
-                            } border-2 border-black px-4 py-1 rounded-lg text-sm`}
+                            ? "bg-white hover:scale-105 hover:bg-gradient-to-br hover:from-[#ffe0d8] hover:to-[#d8faff] text-thisBlack border-thisBlack"
+                            : "bg-thisBlack hover:bg-[#5f4655] text-white border-white"
+                            } border-2 px-4 py-1 rounded-lg text-base font-karla`}
                     >
                         {sentenceIndex === sentences.length - 1 ? "Explore" : "Next"}
                     </button>

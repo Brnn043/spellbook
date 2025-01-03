@@ -31,7 +31,7 @@ export const ProjectModal = ({ title, setOpen, data }) => {
         <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
             <div className="bg-white border-2 border-thisBlack rounded-xl overflow-hidden w-3/4 max-w-xl flex flex-col md:flex-col relative">
                 {/* Header */}
-                <div className="bg-gradient-to-br from-[#a6a0ff] via-[#d3a0ff] to-[#fff9a0] text-thisBlack border-b-2 border-thisBlack h-16 text-center flex justify-center items-center font-payToneOne text-2xl relative">
+                <div className="bg-gradientcustom text-thisBlack border-b-2 border-thisBlack h-16 text-center flex justify-center items-center font-payToneOne text-2xl relative">
                     {title}
                     {/* Close Button */}
                     <button
@@ -126,7 +126,7 @@ export const InfoModal = ({ title, setOpen, data }) => {
         <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
             <div className="bg-white border-2 border-thisBlack rounded-xl overflow-hidden w-3/4 max-w-xl flex flex-col md:flex-col md:space-x-4 relative">
                 {/* Header */}
-                <div className="bg-gradient-to-br from-[#a6a0ff] via-[#d3a0ff] to-[#fff9a0] text-thisBlack border-b-2 border-thisBlack h-16 text-center flex justify-center items-center font-payToneOne text-2xl relative">
+                <div className="bg-gradientcustom text-thisBlack border-b-2 border-thisBlack h-16 text-center flex justify-center items-center font-payToneOne text-2xl relative">
                     {title}
                     {/* Close Button */}
                     <button

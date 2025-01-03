@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "@/Activity/Experience";
 import { Work } from "@/components/activity/Modal";
 import { useState } from "react";
+import { BackButton } from "@/components/NavigateButton";
 
 export default function Activity() {
     const [openWork, setOpenWork] = useState(false);
@@ -25,5 +26,7 @@ export default function Activity() {
         </div>
 
         {openWork && <Work setOpen={setOpenWork} />}
+
+        <BackButton />
     </>
 }

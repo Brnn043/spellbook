@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "@/Project/Experience";
 import { useState } from "react";
 import { Competitive, GameDev, Others, Website } from '@/components/project/Modal'
+import { BackButton } from "@/components/NavigateButton";
 
 export default function Project() {
     const [openWebsite, setOpenWebsite] = useState(false);
@@ -31,5 +32,7 @@ export default function Project() {
         {openGameDev && <GameDev setOpen={setOpenGameDev} />}
         {openCompetitive && <Competitive setOpen={setOpenCompetitive} />}
         {openOthers && <Others setOpen={setOpenOthers} />}
+
+        <BackButton />
     </>
 }
