@@ -18,8 +18,10 @@ export default function Experience({ setOpenWork }) {
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
         />
-        <ExploreRoom />
+        <group position={[-0.5, -2.25, -1]}>
+            <ExploreRoom />
 
-        <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} />
+            <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} />
+        </group>
     </>
 }

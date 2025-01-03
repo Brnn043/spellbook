@@ -18,15 +18,16 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
         />
-        <PotionRoom />
-
-        {/* Desk */}
-        <QuestionMark position={[0.5, 1.5, 1]} setOpen={setOpenWebsite} />
-        {/* Pot */}
-        <QuestionMark position={[-1.1, 2, 0.47]} setOpen={setOpenGameDev} />
-        {/* BookShelves */}
-        <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} />
-        {/* Vase */}
-        <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} />
+        <group position={[-0.5, -2.1, -1]}>
+            <PotionRoom />
+            {/* Desk */}
+            <QuestionMark position={[0.5, 1.5, 1]} setOpen={setOpenWebsite} />
+            {/* Pot */}
+            <QuestionMark position={[-1.1, 2, 0.47]} setOpen={setOpenGameDev} />
+            {/* BookShelves */}
+            <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} />
+            {/* Vase */}
+            <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} />
+        </group>
     </>
 }

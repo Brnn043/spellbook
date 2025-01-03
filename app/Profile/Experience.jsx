@@ -18,14 +18,16 @@ export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInt
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
         />
-        <Bedroom />
-        {/* Bed */}
-        <QuestionMark position={[-0.75, 1.5, 0.5]} setOpen={setOpenInterest} />
-        {/* Broom */}
-        <QuestionMark position={[-1, 1.5, 2]} setOpen={setOpenEducation} />
-        {/* Mirror */}
-        <QuestionMark position={[0.65, 2.2, -0.3]} setOpen={setOpenKnowMe} />
-        {/* Hat */}
-        <QuestionMark position={[1.65, 2.85, -1]} setOpen={setOpenSkills} />
+        <group position={[-0.75, -2, -1]}>
+            <Bedroom />
+            {/* Bed */}
+            <QuestionMark position={[-0.75, 1.5, 0.5]} setOpen={setOpenInterest} />
+            {/* Broom */}
+            <QuestionMark position={[-1, 1.5, 2]} setOpen={setOpenEducation} />
+            {/* Mirror */}
+            <QuestionMark position={[0.65, 2.2, -0.3]} setOpen={setOpenKnowMe} />
+            {/* Hat */}
+            <QuestionMark position={[1.65, 2.85, -1]} setOpen={setOpenSkills} />
+        </group>
     </>
 }

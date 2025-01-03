@@ -66,8 +66,8 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
 
         const cameraTarget = new THREE.Vector3()
         cameraTarget.copy(body.current.position)
-        cameraTarget.x += 0.4
-        cameraTarget.y += 0.7
+        cameraTarget.x += 0.5
+        cameraTarget.y += 0.65
 
         smoothedCameraPosition.lerp(cameraPosition, 5 * delta)
         smoothedCameraTarget.lerp(cameraTarget, 5 * delta)
