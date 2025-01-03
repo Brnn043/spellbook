@@ -29,13 +29,22 @@ export const NavigateButton = () => {
                             href="/Profile"
                             onClick={() => setIsOpen(false)}
                             className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
+                            style={{
+                                animation: isOpen ? "slideIn 0.3s ease-out forwards" : "none",
+                                animationDelay: "-0.1s",
+                            }}
                         >
                             Profile
                         </a>
+
                         <a
                             href="/Project"
                             onClick={() => setIsOpen(false)}
                             className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
+                            style={{
+                                animation: isOpen ? "slideIn 0.3s ease-out forwards" : "none",
+                                animationDelay: "0.1s",
+                            }}
                         >
                             Project
                         </a>
@@ -43,6 +52,10 @@ export const NavigateButton = () => {
                             href="/Activity"
                             onClick={() => setIsOpen(false)}
                             className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
+                            style={{
+                                animation: isOpen ? "slideIn 0.3s ease-out forwards" : "none",
+                                animationDelay: "0.4s",
+                            }}
                         >
                             Activity
                         </a>
