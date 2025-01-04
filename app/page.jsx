@@ -1,7 +1,7 @@
 'use client';
 import MoveButton from '@/components/MoveButton';
 import Experience from './Experience';
-import { KeyboardControls, OrbitControls } from '@react-three/drei';
+import { KeyboardControls, Preload } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Suspense, useState } from 'react';
 import Visit from '@/components/Visit';
@@ -43,6 +43,7 @@ export default function Page() {
               }}
             >
               <Experience controls={controls} openModal={isOpen} checkDoorTrigger={checkDoorTrigger} />
+              <Preload all />
             </Canvas>
           </KeyboardControls>
 

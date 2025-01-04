@@ -1,9 +1,9 @@
 'use client';
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Experience from "@/Profile/Experience";
 import { KnowMe, Education, Interest, Skills } from "@/components/profile/Modal";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import HintMessage from "@/components/HintMessage";
@@ -29,6 +29,7 @@ export default function Profile() {
                 >
                     <OrbitControls />
                     <Experience setOpenKnowMe={setOpenKnowMe} setOpenEducation={setOpenEducation} setOpenInterest={setOpenInterest} setOpenSkills={setOpenSkills} />
+                    <Preload all />
                 </Canvas>
             </div>
 

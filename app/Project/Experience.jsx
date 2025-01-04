@@ -1,9 +1,10 @@
 import PotionRoom from "@/components/project/PotionRoom";
 import { QuestionMark } from "@/components/QuestionMark";
+import { BakeShadows, Float } from "@react-three/drei";
 
 export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenCompetitive, setOpenOthers }) {
     return <>
-        <ambientLight intensity={0.5} color="#f8eaff" />
+        <ambientLight intensity={0.25} color="#f8eaff" />
         <directionalLight
             castShadow
             name="shadowLight"
@@ -17,6 +18,7 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
             shadow-camera-right={30}
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
+            shadow-bias={-0.0005}
         />
         <group position={[-0.5, -2.1, -1]}>
             <PotionRoom />
@@ -29,5 +31,6 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
             {/* Vase */}
             <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} title={"Others"} />
         </group>
+        <BakeShadows />
     </>
 }

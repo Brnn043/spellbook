@@ -1,9 +1,10 @@
 import ExploreRoom from "@/components/activity/ExploreRoom";
 import { QuestionMark } from "@/components/QuestionMark";
+import { BakeShadows, Float } from "@react-three/drei";
 
 export default function Experience({ setOpenWork }) {
     return <>
-        <ambientLight intensity={0.5} color="#f8eaff" />
+        <ambientLight intensity={0.25} color="#f8eaff" />
         <directionalLight
             castShadow
             name="shadowLight"
@@ -17,11 +18,12 @@ export default function Experience({ setOpenWork }) {
             shadow-camera-right={30}
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
+            shadow-bias={-0.0005}
         />
         <group position={[-0.5, -2.25, -1]}>
             <ExploreRoom />
-
             <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} title={"Activity"} />
         </group>
+        <BakeShadows />
     </>
 }

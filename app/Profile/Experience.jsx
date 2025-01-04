@@ -1,9 +1,10 @@
 import Bedroom from "@/components/profile/Bedroom";
 import { QuestionMark } from "@/components/QuestionMark";
+import { BakeShadows, Float } from "@react-three/drei";
 
 export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInterest, setOpenSkills }) {
     return <>
-        <ambientLight intensity={0.5} color="#f8eaff" />
+        <ambientLight intensity={0.25} color="#f8eaff" />
         <directionalLight
             castShadow
             name="shadowLight"
@@ -17,6 +18,7 @@ export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInt
             shadow-camera-right={30}
             shadow-camera-top={15}
             shadow-camera-bottom={-15}
+            shadow-bias={-0.0005}
         />
         <group position={[-0.75, -2, -1]}>
             <Bedroom />
@@ -29,5 +31,7 @@ export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInt
             {/* Hat */}
             <QuestionMark position={[1.65, 2.85, -0.75]} setOpen={setOpenSkills} title={"Skills"} />
         </group>
+
+        <BakeShadows />
     </>
 }

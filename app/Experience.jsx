@@ -18,6 +18,7 @@ export default function Experience({ controls, openModal, checkDoorTrigger }) {
             shadow-camera-right={20}
             shadow-camera-top={15}
             shadow-camera-bottom={-20}
+            shadow-bias={-0.0005}
         />
         <Character controls={controls} openModal={openModal} checkDoorTrigger={checkDoorTrigger} />
         <Hallway />

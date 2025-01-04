@@ -6,5 +6,5 @@ export const hallwaySentences = [
 
 export const roomSentences = [
     "Try clicking on the question mark to see the details.",
-    "Feel free to click on the question mark!"
+    "You can rotate around the scene by orbiting."
 ]

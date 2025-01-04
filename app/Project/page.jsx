@@ -1,5 +1,5 @@
 'use client';
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Experience from "@/Project/Experience";
 import { Suspense, useState } from "react";
@@ -29,6 +29,7 @@ export default function Project() {
                 >
                     <OrbitControls />
                     <Experience setOpenWebsite={setOpenWebsite} setOpenGameDev={setOpenGameDev} setOpenCompetitive={setOpenCompetitive} setOpenOthers={setOpenOthers} />
+                    <Preload all />
                 </Canvas>
             </div>
 
