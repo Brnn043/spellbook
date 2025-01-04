@@ -21,7 +21,7 @@ export default function Experience({ setOpenWork }) {
         <group position={[-0.5, -2.25, -1]}>
             <ExploreRoom />
 
-            <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} />
+            <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} title={"Activity"} />
         </group>
     </>
 }

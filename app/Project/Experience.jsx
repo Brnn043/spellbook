@@ -21,13 +21,13 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
         <group position={[-0.5, -2.1, -1]}>
             <PotionRoom />
             {/* Desk */}
-            <QuestionMark position={[0.5, 1.5, 1]} setOpen={setOpenWebsite} />
+            <QuestionMark position={[0.5, 1.5, 1]} setOpen={setOpenWebsite} title={"WebDev"} />
             {/* Pot */}
-            <QuestionMark position={[-1.1, 2, 0.47]} setOpen={setOpenGameDev} />
+            <QuestionMark position={[-1.1, 2, 0.47]} setOpen={setOpenGameDev} title={"GameDev"} />
             {/* BookShelves */}
-            <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} />
+            <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} title={"Competitve\nProgramming"} />
             {/* Vase */}
-            <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} />
+            <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} title={"Others"} />
         </group>
     </>
 }

@@ -21,13 +21,13 @@ export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInt
         <group position={[-0.75, -2, -1]}>
             <Bedroom />
             {/* Bed */}
-            <QuestionMark position={[-0.75, 1.5, 0.5]} setOpen={setOpenInterest} />
+            <QuestionMark position={[-0.75, 1.5, 0.5]} setOpen={setOpenInterest} title={"Interests"} />
             {/* Broom */}
-            <QuestionMark position={[-1, 1.5, 2]} setOpen={setOpenEducation} />
+            <QuestionMark position={[-1, 1.5, 2]} setOpen={setOpenEducation} title={"Education"} />
             {/* Mirror */}
-            <QuestionMark position={[0.65, 2.2, -0.3]} setOpen={setOpenKnowMe} />
+            <QuestionMark position={[0.65, 2.2, -0.3]} setOpen={setOpenKnowMe} title={"Me"} />
             {/* Hat */}
-            <QuestionMark position={[1.65, 2.85, -1]} setOpen={setOpenSkills} />
+            <QuestionMark position={[1.65, 2.85, -0.75]} setOpen={setOpenSkills} title={"Skills"} />
         </group>
     </>
 }
