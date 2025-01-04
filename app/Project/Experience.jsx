@@ -25,7 +25,7 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
             {/* Pot */}
             <QuestionMark position={[-1.1, 2, 0.47]} setOpen={setOpenGameDev} title={"GameDev"} />
             {/* BookShelves */}
-            <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} title={"Competitve\nProgramming"} />
+            <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} title={"Competitive\nProgramming"} />
             {/* Vase */}
             <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} title={"Others"} />
         </group>
