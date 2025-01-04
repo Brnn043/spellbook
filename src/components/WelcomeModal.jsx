@@ -27,7 +27,13 @@ export default function WelcomeModal({ setShowWelcome }) {
 
     return (
         <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-            <div className="bg-gradientcustom border-2 border-white rounded-xl p-6 w-3/4 max-w-xl flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
+            <div className="bg-gradientcustom border-2 border-white rounded-xl px-1 py-6 w-3/4 max-w-xl flex flex-col space-y-2 md:flex-row md:space-x-4 relative">
+                <button
+                    onClick={() => setShowWelcome(false)}
+                    className="absolute top-2 right-2 font-karla bg-thisBlack text-white rounded-full h-8 w-8 flex justify-center items-center hover:bg-white hover:text-thisBlack transition"
+                >
+                    X
+                </button>
                 <div className="flex flex-col items-center justify-center space-y-2">
                     <img
                         src={character.image}
@@ -39,7 +45,7 @@ export default function WelcomeModal({ setShowWelcome }) {
                     </div>
                 </div>
 
-                <div className="text-lg break-words md:w-8/12 font-karla">{sentences[sentenceIndex]}</div>
+                <div className="text-lg break-words md:w-8/12 font-karla px-4 md:px-1">{sentences[sentenceIndex]}</div>
 
                 <div className="flex justify-center items-center pt-4 md:absolute md:bottom-4 md:right-4">
                     <button

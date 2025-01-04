@@ -120,7 +120,7 @@ export const ProjectModal = ({ title, setOpen, data }) => {
     );
 };
 
-// // this modal show text in a list 
+// this modal show text in a list 
 export const InfoModal = ({ title, setOpen, data }) => {
     return (
         <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
