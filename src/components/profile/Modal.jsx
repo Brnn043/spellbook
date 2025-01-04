@@ -27,60 +27,65 @@ export const KnowMe = ({ setOpen }) => {
 
     return (
         <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-            <div className="bg-gradientcustom2 border-2 p-7 space-x-4 border-thisBlack rounded-xl overflow-hidden w-3/4 max-w-xl flex flex-col md:flex-row relative justify-center items-center">
-                {/* Left Side Image */}
-                <div className="w-full h-36 md:w-1/3 md:h-full">
-                    <img
-                        src="/Beam.webp"
-                        alt="Beam"
-                        className="w-full h-full object-cover rounded-lg"
-                    />
-                </div>
+            <div className="bg-gradientcustom2 border-2 p-7 border-thisBlack rounded-xl overflow-hidden w-3/4 max-w-xl flex flex-col relative justify-center items-center">
 
-                {/* Right Side Content */}
-                <div className="w-full md:w-2/3 flex flex-col space-y-2 md:space-y-4 pt-6 md:pt-0">
-                    {/* Title */}
-                    <h3 className="text-thisBlack text-3xl font-bold text-center mb-4">Me</h3>
+                {/* Title */}
+                <h3 className="text-thisBlack text-3xl font-bold text-center mb-4">Me</h3>
+                <div className="flex flex-col md:flex-row justify-center items-center md:items-start md:space-x-4">
 
-                    {/* Close Button */}
-                    <button
-                        onClick={() => setOpen(false)}
-                        className="absolute top-0 right-2 md:top-4 md:right-4 font-karla bg-thisBlack text-white rounded-full h-8 w-8 flex justify-center items-center hover:bg-white hover:text-thisBlack transition"
-                    >
-                        X
-                    </button>
-
-                    {/* Content Display with Fixed Height */}
-                    <div className="flex flex-col space-y-3 md:h-60">
-                        {sentences.slice(currentPage * 2, currentPage * 2 + 2).map((sentence, index) => (
-                            <p key={index} className="text-thisBlack rounded text-base font-karla break-words px-1">
-                                {sentence}
-                            </p>
-                        ))}
+                    {/* Left Side Image */}
+                    <div className="flex justify-center items-center w-full h-36 md:w-1/3 md:h-full">
+                        <img
+                            src="/Beam.webp"
+                            alt="Beam"
+                            className="w-full h-full object-cover rounded-lg border-2 border-white"
+                        />
                     </div>
 
-                    {/* Navigation Buttons */}
-                    <div className="flex justify-between items-center mt-4 md:mt-auto font-karla text-thisBlack text-base py-2">
+
+                    {/* Right Side Content */}
+                    <div className="w-full md:w-2/3 flex flex-col pt-6 md:pt-0">
+
+                        {/* Close Button */}
                         <button
-                            onClick={handlePrevGame}
-                            disabled={isPrevDisabled}
-                            className={`px-4 py-2 rounded-full text-white ${isPrevDisabled
-                                ? "bg-gray-300 cursor-not-allowed"
-                                : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
-                                }`}
+                            onClick={() => setOpen(false)}
+                            className="absolute top-2 right-2 md:top-4 md:right-4 font-karla bg-thisBlack text-white rounded-full h-8 w-8 flex justify-center items-center hover:bg-white hover:text-thisBlack transition"
                         >
-                            &lt; Prev
+                            X
                         </button>
-                        <button
-                            onClick={handleNextGame}
-                            disabled={isNextDisabled}
-                            className={`px-4 py-2 rounded-full text-white ${isNextDisabled
-                                ? "bg-gray-300 cursor-not-allowed"
-                                : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
-                                }`}
-                        >
-                            Next &gt;
-                        </button>
+
+                        {/* Content */}
+                        <div className="flex flex-col space-y-3 md:h-60">
+                            {sentences.slice(currentPage * 2, currentPage * 2 + 2).map((sentence, index) => (
+                                <p key={index} className="text-thisBlack rounded text-base font-karla break-words px-1">
+                                    {sentence}
+                                </p>
+                            ))}
+                        </div>
+
+                        {/* Navigation Buttons */}
+                        <div className="flex justify-between items-center mt-4 md:mt-auto font-karla text-thisBlack text-base py-2">
+                            <button
+                                onClick={handlePrevGame}
+                                disabled={isPrevDisabled}
+                                className={`px-4 py-2 rounded-full text-white border-2 border-white ${isPrevDisabled
+                                    ? "bg-gray-300 cursor-not-allowed"
+                                    : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
+                                    }`}
+                            >
+                                &lt; Prev
+                            </button>
+                            <button
+                                onClick={handleNextGame}
+                                disabled={isNextDisabled}
+                                className={`px-4 py-2 rounded-full text-white border-2 border-white ${isNextDisabled
+                                    ? "bg-gray-300 cursor-not-allowed"
+                                    : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
+                                    }`}
+                            >
+                                Next &gt;
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
