@@ -6,6 +6,8 @@ import { Work } from "@/components/activity/Modal";
 import { Suspense, useState } from "react";
 import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import HintMessage from "@/components/HintMessage";
+import { roomSentences } from "@/utils/Sentence";
 
 export default function Activity() {
     const [openWork, setOpenWork] = useState(false);
@@ -30,6 +32,8 @@ export default function Activity() {
             {openWork && <Work setOpen={setOpenWork} />}
 
             <BackButton />
+
+            <HintMessage sentences={roomSentences} />
 
         </Suspense>
     </>

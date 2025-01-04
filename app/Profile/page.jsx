@@ -6,6 +6,8 @@ import { KnowMe, Education, Interest, Skills } from "@/components/profile/Modal"
 import { Suspense, useState } from "react";
 import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import HintMessage from "@/components/HintMessage";
+import { roomSentences } from "@/utils/Sentence";
 
 export default function Profile() {
     const [openKnowMe, setOpenKnowMe] = useState(false);
@@ -35,6 +37,8 @@ export default function Profile() {
             {openEducation && <Education setOpen={setOpenEducation} />}
             {openInterest && <Interest setOpen={setOpenInterest} />}
             {openSkills && <Skills setOpen={setOpenSkills} />}
+
+            <HintMessage sentences={roomSentences} />
 
             <BackButton />
         </Suspense>

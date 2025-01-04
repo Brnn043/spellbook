@@ -6,6 +6,8 @@ import { Suspense, useState } from "react";
 import { Competitive, GameDev, Others, Website } from '@/components/project/Modal'
 import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import HintMessage from "@/components/HintMessage";
+import { roomSentences } from "@/utils/Sentence";
 
 export default function Project() {
     const [openWebsite, setOpenWebsite] = useState(false);
@@ -36,6 +38,8 @@ export default function Project() {
             {openOthers && <Others setOpen={setOpenOthers} />}
 
             <BackButton />
+
+            <HintMessage sentences={roomSentences} />
         </Suspense>
     </>
 }

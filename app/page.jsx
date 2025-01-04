@@ -11,6 +11,7 @@ import WelcomeModal from '@/components/WelcomeModal';
 import HintMessage from '@/components/HintMessage';
 import { NavigateButton } from '@/components/NavigateButton';
 import { LoadingScreen } from '@/components/LoadingScreen';
+import { hallwaySentences } from '@/utils/Sentence';
 
 
 export default function Page() {
@@ -52,7 +53,7 @@ export default function Page() {
         {activeModal === "project" && <Visit name="Project" setOpen={closeModal} />}
         {activeModal === "activity" && <Visit name="Activity" setOpen={closeModal} />}
         {showWelcome && <WelcomeModal setShowWelcome={setShowWelcome} />}
-        {!showWelcome && <HintMessage />}
+        {!showWelcome && <HintMessage sentences={hallwaySentences} />}
 
         <NavigateButton />
       </Suspense>
