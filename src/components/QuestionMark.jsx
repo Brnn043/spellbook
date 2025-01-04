@@ -19,7 +19,6 @@ export const QuestionMark = ({ position, setOpen, title = null }) => {
     });
 
     const handleClick = () => {
-        console.log("clicked");
         setOpen(true);
     };
 
@@ -65,6 +64,9 @@ export const QuestionMark = ({ position, setOpen, title = null }) => {
                     depthTest={false}
                     renderOrder={1}
                     font="/fonts/PaytoneOne-Regular.ttf"
+                    onClick={handleClick}
+                    onPointerOver={handlePointerOver}
+                    onPointerOut={handlePointerOut}
                 >
                     {title}
                 </Text>
