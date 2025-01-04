@@ -8,7 +8,7 @@ export default function Experience({ controls, openModal, checkDoorTrigger }) {
         <directionalLight
             castShadow
             name="shadowLight"
-            position={[10, 13, 5]}
+            position={[10, 13, 4]}
             intensity={3}
             shadow-mapSize-width={4096}
             shadow-mapSize-height={4096}

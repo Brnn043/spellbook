@@ -30,7 +30,7 @@ export default function MoveButton({ setControls }) {
     }, [isLeftPressed, isRightPressed]);
 
     return (
-        <div className="fixed bottom-4 left-0 right-0 flex justify-center space-x-4 z-10">
+        <div className="fixed bottom-0 left-0 right-0 flex justify-between py-8 px-12 z-10">
             {/* Left Button */}
             <button
                 tabIndex={-1}
