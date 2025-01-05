@@ -31,7 +31,7 @@ export const NavigateButton = () => {
                             className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
                             style={{
                                 animation: isOpen ? "slideIn 0.3s ease-out forwards" : "none",
-                                animationDelay: "-0.1s",
+                                animationDelay: "0s",
                             }}
                         >
                             Profile
@@ -43,7 +43,7 @@ export const NavigateButton = () => {
                             className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
                             style={{
                                 animation: isOpen ? "slideIn 0.3s ease-out forwards" : "none",
-                                animationDelay: "0.1s",
+                                animationDelay: "0.05s",
                             }}
                         >
                             Project
@@ -54,7 +54,7 @@ export const NavigateButton = () => {
                             className={`w-24 py-2 border-2 border-thisBlack text-thisBlack bg-gradientcustom2 text-center rounded-full relative overflow-hidden transition-all`}
                             style={{
                                 animation: isOpen ? "slideIn 0.3s ease-out forwards" : "none",
-                                animationDelay: "0.4s",
+                                animationDelay: "0.1s",
                             }}
                         >
                             Activity
