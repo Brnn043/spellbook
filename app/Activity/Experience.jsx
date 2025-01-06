@@ -1,6 +1,7 @@
 import ExploreRoom from "@/components/activity/ExploreRoom";
 import { QuestionMark } from "@/components/QuestionMark";
-import { BakeShadows, Float } from "@react-three/drei";
+import { BakeShadows } from "@react-three/drei";
+import Character from "@/components/StaticCharacter";
 
 export default function Experience({ setOpenWork }) {
     return <>
@@ -24,6 +25,8 @@ export default function Experience({ setOpenWork }) {
             <ExploreRoom />
             <QuestionMark position={[0, 2, 0]} setOpen={setOpenWork} title={"Activity"} />
         </group>
+
+        <Character position={[0.75, -2.06, -1]} rotation={[0, Math.PI - 0.25, 0]} />
         <BakeShadows />
     </>
 }

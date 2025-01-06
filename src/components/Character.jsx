@@ -24,7 +24,8 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
         if (!body.current) return;
         if (openModal) {
             actions['Armaturerun_R_necromancer'].stop();
-            actions['Armature_static_pose'].play();
+            actions['Armatureblocking_loop_necromancer'].play();
+            actions['Armatureidle_necromancer'].stop();
             return;
         }
         let { forward, backward } = getKeys();
@@ -39,10 +40,14 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
         if (!(positionX < -0.8 || positionX > 26)) body.current.position.x = positionX;
 
         if (actions && (forward || backward)) {
+
+            actions['Armatureidle_necromancer'].stop();
             actions['Armaturerun_R_necromancer'].play();
+            actions['Armatureblocking_loop_necromancer'].stop();
         } else {
             actions['Armaturerun_R_necromancer'].stop();
-            actions['Armature_static_pose'].play();
+            actions['Armatureidle_necromancer'].play();
+            actions['Armatureblocking_loop_necromancer'].stop();
         }
 
         let rotationY = Math.PI * 3 / 2;

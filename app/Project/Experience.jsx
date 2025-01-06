@@ -1,6 +1,7 @@
 import PotionRoom from "@/components/project/PotionRoom";
 import { QuestionMark } from "@/components/QuestionMark";
 import { BakeShadows, Float } from "@react-three/drei";
+import Character from "@/components/StaticCharacter";
 
 export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenCompetitive, setOpenOthers }) {
     return <>
@@ -31,6 +32,8 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
             {/* Vase */}
             <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} title={"Others"} />
         </group>
+
+        <Character position={[1.25, -1.7, -1]} rotation={[0, Math.PI - 0.25, 0]} />
         <BakeShadows />
     </>
 }

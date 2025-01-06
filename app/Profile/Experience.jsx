@@ -1,6 +1,7 @@
 import Bedroom from "@/components/profile/Bedroom";
 import { QuestionMark } from "@/components/QuestionMark";
 import { BakeShadows, Float } from "@react-three/drei";
+import Character from "@/components/StaticCharacter";
 
 export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInterest, setOpenSkills }) {
     return <>
@@ -32,6 +33,7 @@ export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInt
             <QuestionMark position={[1.65, 2.85, -0.75]} setOpen={setOpenSkills} title={"Skills"} />
         </group>
 
+        <Character position={[0, -1.7, 0.25]} rotation={[0, Math.PI + 0.5, 0]} />
         <BakeShadows />
     </>
 }
