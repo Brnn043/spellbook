@@ -6,7 +6,7 @@ import * as THREE from 'three'
 export default function Character({ controls, openModal, checkDoorTrigger }) {
     const body = useRef();
     const [subscribeKeys, getKeys] = useKeyboardControls();
-    const { scene, animations } = useGLTF('/scene.gltf');
+    const { scene, animations } = useGLTF('/character2.glb');
 
     const { actions } = useAnimations(animations, scene);
 
@@ -18,17 +18,13 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
             child.castShadow = true;
             child.receiveShadow = true;
         }
-
-        if (child.material) {
-            child.material.emissive = new THREE.Color(0xbc5cff);
-            child.material.emissiveIntensity = 1;
-        }
     });
 
     useFrame((state, delta) => {
         if (!body.current) return;
         if (openModal) {
-            actions['Armature.001|Armature.001Action'].stop();
+            actions['Armaturerun_R_necromancer'].stop();
+            actions['Armature_static_pose'].play();
             return;
         }
         let { forward, backward } = getKeys();
@@ -43,9 +39,10 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
         if (!(positionX < -0.8 || positionX > 26)) body.current.position.x = positionX;
 
         if (actions && (forward || backward)) {
-            actions['Armature.001|Armature.001Action'].play();
+            actions['Armaturerun_R_necromancer'].play();
         } else {
-            actions['Armature.001|Armature.001Action'].stop();
+            actions['Armaturerun_R_necromancer'].stop();
+            actions['Armature_static_pose'].play();
         }
 
         let rotationY = Math.PI * 3 / 2;
@@ -82,7 +79,7 @@ export default function Character({ controls, openModal, checkDoorTrigger }) {
             <primitive
                 ref={body}
                 object={scene}
-                scale={0.5}
+                scale={0.6}
                 position={[0.3, 0, 0]}
                 rotation-y={Math.PI * 3 / 2}
                 castShadow
