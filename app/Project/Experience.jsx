@@ -30,10 +30,10 @@ export default function Experience({ setOpenWebsite, setOpenGameDev, setOpenComp
             {/* BookShelves */}
             <QuestionMark position={[0.75, 2.5, -0.5]} setOpen={setOpenCompetitive} title={"Competitive\nProgramming"} />
             {/* Vase */}
-            <QuestionMark position={[-1.25, 3.5, -0.75]} setOpen={setOpenOthers} title={"Others"} />
+            <QuestionMark position={[-1.05, 3.5, -0.75]} setOpen={setOpenOthers} title={"Metaverse"} />
         </group>
 
-        <Character position={[1.25, -1.7, -1]} rotation={[0, Math.PI - 0.25, 0]} />
+        <Character position={[1.25, -1.8, -1]} rotation={[0, Math.PI - 0.25, 0]} />
         <BakeShadows />
     </>
 }

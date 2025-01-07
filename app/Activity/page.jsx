@@ -8,7 +8,6 @@ import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import HintMessage from "@/components/HintMessage";
 import { roomSentences } from "@/utils/Sentence";
-import * as THREE from 'three';
 
 export default function Activity() {
     const [openWork, setOpenWork] = useState(false);

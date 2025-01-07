@@ -130,7 +130,7 @@ export const Skills = ({ setOpen }) => {
                 },
                 {
                     title: 'Frameworks & Libraries',
-                    content: 'React, Next.js, Astro, Vue.js, Three.js, React-Three-Fiber etc.'
+                    content: 'React, Next.js, Three.js, React-Three-Fiber, Astro, Vue.js etc.'
                 },
                 {
                     title: 'UI Frameworks',
