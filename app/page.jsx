@@ -12,6 +12,7 @@ import HintMessage from '@/components/HintMessage';
 import { NavigateButton } from '@/components/NavigateButton';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { hallwaySentences } from '@/utils/Sentence';
+import { ContactButton } from '@/components/Contact';
 
 
 export default function Page() {
@@ -53,10 +54,13 @@ export default function Page() {
         {activeModal === "profile" && <Visit name="Profile" setOpen={closeModal} />}
         {activeModal === "project" && <Visit name="Project" setOpen={closeModal} />}
         {activeModal === "activity" && <Visit name="Activity" setOpen={closeModal} />}
+
         {showWelcome && <WelcomeModal setShowWelcome={setShowWelcome} />}
         {!showWelcome && <HintMessage sentences={hallwaySentences} />}
 
         <NavigateButton />
+
+        <ContactButton />
       </Suspense>
     </>
   );
