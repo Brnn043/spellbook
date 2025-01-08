@@ -8,12 +8,20 @@ import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import HintMessage from "@/components/HintMessage";
 import { roomSentences } from "@/utils/Sentence";
+import { SectionButton } from "@/components/GlobalSectionButton";
 
 export default function Profile() {
     const [openKnowMe, setOpenKnowMe] = useState(false);
     const [openEducation, setOpenEducation] = useState(false);
     const [openInterest, setOpenInterest] = useState(false);
     const [openSkills, setOpenSkills] = useState(false);
+
+    const buttons = [
+        { name: 'Me', setOpen: setOpenKnowMe, isOpen: openKnowMe },
+        { name: 'Interests', setOpen: setOpenInterest, isOpen: openInterest },
+        { name: 'Skills', setOpen: setOpenSkills, isOpen: openSkills },
+        { name: 'Education', setOpen: setOpenEducation, isOpen: openEducation }
+    ]
 
     return <>
         <Suspense fallback={<LoadingScreen />}>
@@ -24,7 +32,7 @@ export default function Profile() {
                         fov: 45,
                         near: 0.1,
                         far: 200,
-                        position: [2.5, 4, 6],
+                        position: [2, 2, 2],
                     }}
                 >
                     <OrbitControls />
@@ -42,6 +50,8 @@ export default function Profile() {
             <HintMessage sentences={roomSentences} />
 
             <BackButton />
+
+            <SectionButton buttons={buttons} />
         </Suspense>
     </>
 }

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export const ProjectModal = ({ title, setOpen, data }) => {
     const [currentPage, setCurrentPage] = useState(0)
     const [currentImage, setCurrentImage] = useState(0);
+    const [fullImageSrc, setFullImageSrc] = useState(null);
 
     // Image auto-slide functionality
     useEffect(() => {
@@ -69,6 +70,7 @@ export const ProjectModal = ({ title, setOpen, data }) => {
                                 src={data[currentPage].images[currentImage]}
                                 alt="Game Image"
                                 className="w-60 h-auto object-cover rounded"
+                                onClick={() => setFullImageSrc(data[currentPage].images[currentImage])}
                             />
                             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
                                 {data[currentPage].images.map((_, index) => (
@@ -86,7 +88,19 @@ export const ProjectModal = ({ title, setOpen, data }) => {
 
                         {/* Game Description */}
                         <div className="scrollable text-thisBlack rounded text-base font-karla flex-1 overflow-y-scroll max-h-48 md:max-h-96 md:h-auto">
-                            <p>{data[currentPage].description}</p>
+                            {/* <p>{data[currentPage].description}</p> */}
+
+                            <div>
+                                {Array.isArray(data[currentPage].description) ? (
+                                    data[currentPage].description.map((desc, index) => (
+                                        <li key={index} className="list-inside my-2" style={{ listStyleType: 'none' }}>
+                                            <span className="text-thisBlack mr-2">★</span> {desc}
+                                        </li>
+                                    ))
+                                ) : (
+                                    <p>{data[currentPage].description}</p>
+                                )}
+                            </div>
 
                             {/* Tags Section */}
                             <div className="my-3 flex flex-wrap gap-2">
@@ -117,6 +131,21 @@ export const ProjectModal = ({ title, setOpen, data }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Full Image Modal */}
+            {fullImageSrc && (
+                <div className="fixed w-full h-full flex justify-center items-center z-40 bg-black bg-opacity-75">
+                    <div className="relative">
+                        <img src={fullImageSrc} alt="image" className="max-w-96 max-h-96 rounded-lg" />
+                        <button
+                            onClick={() => setFullImageSrc(null)} // Close modal
+                            className="absolute top-4 right-4 font-karla bg-white text-thisBlack rounded-full h-8 w-8 flex justify-center items-center hover:bg-thisBlack hover:text-white transition"
+                        >
+                            X
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

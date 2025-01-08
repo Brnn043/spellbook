@@ -8,8 +8,8 @@ export default function WelcomeModal({ setShowWelcome }) {
         "I am Beam (Raksakul Hiranas), the proud owner of this mansion.",
         "Currently, I'm studying in the 2nd year of Computer Engineering at Chulalongkorn University.",
         "As a passionate creative and inspirational witch, I love conjuring up imaginative creations, just like this very spellbook. 😊",
-        "If you'd like to know more about me, feel free to explore the rooms in my mansion, including 'Profile,' 'Projects,' and 'Activity.'",
-        "You can navigate through my magical space by clicking the buttons on the screen, or by pressing 'A' or 'D,' or using the left and right arrow keys."
+        'If you\'d like to know more about me, feel free to explore the rooms in my mansion, including "Profile", "Projects", and "Activity".',
+        'You can navigate through my magical space by "clicking the buttons" on the screen, or by pressing "A" or "D", or using the "left" and "right" arrow keys.'
     ];
 
     const character = {
@@ -23,6 +23,11 @@ export default function WelcomeModal({ setShowWelcome }) {
         } else {
             setShowWelcome(false);
         }
+    };
+
+    // Function to bold text inside double quotes and remove the quotes
+    const boldTextInQuotes = (text) => {
+        return text.replace(/"([^"]+)"/g, "<strong>$1</strong>");
     };
 
     return (
@@ -45,7 +50,10 @@ export default function WelcomeModal({ setShowWelcome }) {
                     </div>
                 </div>
 
-                <div className="text-lg break-words md:w-8/12 font-karla px-4 md:px-1">{sentences[sentenceIndex]}</div>
+                <div
+                    className="text-lg break-words md:w-8/12 font-karla px-4 md:px-1"
+                    dangerouslySetInnerHTML={{ __html: boldTextInQuotes(sentences[sentenceIndex]) }}
+                ></div>
 
                 <div className="flex justify-center items-center pt-4 md:absolute md:bottom-4 md:right-4">
                     <button

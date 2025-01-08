@@ -8,9 +8,14 @@ import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import HintMessage from "@/components/HintMessage";
 import { roomSentences } from "@/utils/Sentence";
+import { SectionButton } from "@/components/GlobalSectionButton";
 
 export default function Activity() {
     const [openWork, setOpenWork] = useState(false);
+
+    const buttons = [
+        { name: 'Activity', setOpen: setOpenWork, isOpen: openWork }
+    ]
 
     return (
         <>
@@ -37,6 +42,8 @@ export default function Activity() {
                 <BackButton />
 
                 <HintMessage sentences={roomSentences} />
+
+                <SectionButton buttons={buttons} />
             </Suspense>
         </>
     );

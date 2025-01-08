@@ -1,96 +1,67 @@
 import { useState } from "react";
-import { InfoModal } from "../GlobalModal";
-
+import { InfoModal, ProjectModal } from "../GlobalModal";
 
 export const KnowMe = ({ setOpen }) => {
-    const sentences = [
-        "Hello, my name is Raksakul Hiranas but you can call me Beam!",
-        "Born on 2nd July, 2005, I am currently in my 2nd year studying Computer Engineering at Chulalongkorn University.",
-        "I am an enthusiastic, hardworking, and passionate individual with a love for creativity. I enjoy learning new things, accept challenges, and am very dedicated to my work.",
-        "I am driven by my passion for innovation and creativity, always striving to turn challenges into opportunities while seeking continuous growth in both my personal and academic life.",
-        "When faced with difficulties, I rely on my dedication and commitment to push through and achieve success.",
-        "In my spare time, I like to do coding, drawing, dancing, and some other creative stuff!"
-    ];
+    const data = [
+        {
+            title: '1/3',
+            images: ['/Beam.webp', '/Beam2.webp', '/Beam3.webp'],
+            description: ['Hello, my name is Raksakul Hiranas but you can call me Beam!',
+                'Born on 2nd July, 2005, I am currently in my 2nd year studying Computer Engineering at Chulalongkorn University.'],
+            tags: [],
+            viewMore: [
+                {
+                    title: 'Email',
+                    link: 'bm.raksakul@gmail.com',
+                    linkTitle: 'bm.raksakul@gmail.com'
+                },
+                {
+                    title: 'Github',
+                    link: 'https://github.com/Brnn043',
+                    linkTitle: 'Brnn043'
+                },
+                {
+                    title: 'Linkedin',
+                    link: 'https://linkedin.com/in/raksakul-hiranas',
+                    linkTitle: 'Raksakul Hiranas'
+                },
+            ]
+        },
+        {
+            title: '2/3',
+            images: ['/Beam.webp', '/Beam2.webp', '/Beam3.webp'],
+            description: ['I am an enthusiastic, hardworking, and passionate individual with a love for creativity. I enjoy learning new things, accept challenges, and am very dedicated to my work.',
+                'I am driven by my passion for innovation and creativity, always striving to turn challenges into opportunities while seeking continuous growth in both my personal and academic life.'],
+            tags: [],
+            viewMore: null
+        },
+        {
+            title: '3/3',
+            images: ['/Beam.webp', '/Beam2.webp', '/Beam3.webp'],
+            description: ['When faced with difficulties, I rely on my dedication and commitment to push through and achieve success.',
+                'In my spare time, I like to do coding, drawing, dancing, and some other creative stuff!'],
+            tags: [],
+            viewMore: [
+                {
+                    title: 'Email',
+                    link: 'bm.raksakul@gmail.com',
+                    linkTitle: 'bm.raksakul@gmail.com'
+                },
+                {
+                    title: 'Github',
+                    link: 'https://github.com/Brnn043',
+                    linkTitle: 'Brnn043'
+                },
+                {
+                    title: 'Linkedin',
+                    link: 'https://linkedin.com/in/raksakul-hiranas',
+                    linkTitle: 'Raksakul Hiranas'
+                },
+            ]
+        }
+    ]
 
-    const [currentPage, setCurrentPage] = useState(0);
-
-    const isPrevDisabled = currentPage === 0;
-    const isNextDisabled = currentPage === Math.floor(sentences.length / 2) - 1;
-
-    const handlePrevGame = () => {
-        if (!isPrevDisabled) setCurrentPage(currentPage - 1);
-    };
-
-    const handleNextGame = () => {
-        if (!isNextDisabled) setCurrentPage(currentPage + 1);
-    };
-
-    return (
-        <div className="fixed w-full h-full flex justify-center items-center z-30 bg-black bg-opacity-50">
-            <div className="bg-gradientcustom2 border-2 p-7 border-thisBlack rounded-xl overflow-hidden w-3/4 max-w-xl flex flex-col relative justify-center items-center">
-
-                {/* Title */}
-                <h3 className="text-thisBlack text-3xl font-bold text-center mb-4">Me</h3>
-                <div className="flex flex-col md:flex-row justify-center items-center md:items-start md:space-x-4">
-
-                    {/* Left Side Image */}
-                    <div className="flex justify-center items-center w-full h-36 md:w-1/3 md:h-full">
-                        <img
-                            src="/Beam.webp"
-                            alt="Beam"
-                            className="w-full h-full object-cover rounded-lg border-2 border-white"
-                        />
-                    </div>
-
-
-                    {/* Right Side Content */}
-                    <div className="w-full md:w-2/3 flex flex-col pt-6 md:pt-0">
-
-                        {/* Close Button */}
-                        <button
-                            onClick={() => setOpen(false)}
-                            className="absolute top-2 right-2 md:top-4 md:right-4 font-karla bg-thisBlack text-white rounded-full h-8 w-8 flex justify-center items-center hover:bg-white hover:text-thisBlack transition"
-                        >
-                            X
-                        </button>
-
-                        {/* Content */}
-                        <div className="flex flex-col space-y-3 md:h-60">
-                            {sentences.slice(currentPage * 2, currentPage * 2 + 2).map((sentence, index) => (
-                                <p key={index} className="text-thisBlack rounded text-base font-karla break-words px-1">
-                                    {sentence}
-                                </p>
-                            ))}
-                        </div>
-
-                        {/* Navigation Buttons */}
-                        <div className="flex justify-between items-center mt-4 md:mt-auto font-karla text-thisBlack text-base py-2">
-                            <button
-                                onClick={handlePrevGame}
-                                disabled={isPrevDisabled}
-                                className={`px-4 py-2 rounded-full text-white border-2 border-white ${isPrevDisabled
-                                    ? "bg-gray-300 cursor-not-allowed"
-                                    : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
-                                    }`}
-                            >
-                                &lt; Prev
-                            </button>
-                            <button
-                                onClick={handleNextGame}
-                                disabled={isNextDisabled}
-                                className={`px-4 py-2 rounded-full text-white border-2 border-white ${isNextDisabled
-                                    ? "bg-gray-300 cursor-not-allowed"
-                                    : "bg-[#f3bfe1] hover:bg-[#ef9ad2]"
-                                    }`}
-                            >
-                                Next &gt;
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+    return <ProjectModal title={'Me'} data={data} setOpen={setOpen} />
 };
 
 
@@ -150,7 +121,7 @@ export const Skills = ({ setOpen }) => {
             title: 'Language Skills',
             content: [
                 'Advanced Level (C1) in English, certified by Stafford House UK',
-                'Currently practicing Japanese',
+                'Elementary proficiency, Japanese language',
                 'Native speaker, Thai language'
             ]
         }

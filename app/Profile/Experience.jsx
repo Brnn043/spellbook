@@ -1,9 +1,33 @@
 import Bedroom from "@/components/profile/Bedroom";
 import { QuestionMark } from "@/components/QuestionMark";
-import { BakeShadows, Float } from "@react-three/drei";
+import { BakeShadows } from "@react-three/drei";
 import Character from "@/components/StaticCharacter";
+import { useThree } from "@react-three/fiber";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 export default function Experience({ setOpenKnowMe, setOpenEducation, setOpenInterest, setOpenSkills }) {
+    const { camera } = useThree();
+
+    useEffect(() => {
+        const tl = gsap.timeline();
+
+        tl.to(camera.position, {
+            duration: 1,
+            x: 2.5,
+            y: 4,
+            z: 6,
+            ease: "power2.inOut",
+        });
+
+        gsap.fromTo(
+            ".explore-room",
+            { rotation: Math.PI * 1.5 },
+            { rotation: 0, duration: 1.5, ease: "power2.inOut" }
+        );
+
+    }, [camera]);
+
     return <>
         <ambientLight intensity={0.25} color="#f8eaff" />
         <directionalLight

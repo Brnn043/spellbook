@@ -8,12 +8,20 @@ import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import HintMessage from "@/components/HintMessage";
 import { roomSentences } from "@/utils/Sentence";
+import { SectionButton } from "@/components/GlobalSectionButton";
 
 export default function Project() {
     const [openWebsite, setOpenWebsite] = useState(false);
     const [openGameDev, setOpenGameDev] = useState(false);
     const [openCompetitive, setOpenCompetitive] = useState(false);
     const [openOthers, setOpenOthers] = useState(false);
+
+    const buttons = [
+        { name: 'WebDev', setOpen: setOpenWebsite, isOpen: openWebsite },
+        { name: 'GameDev', setOpen: setOpenGameDev, isOpen: openGameDev },
+        { name: 'Competitive', setOpen: setOpenCompetitive, isOpen: openCompetitive },
+        { name: 'Metaverse', setOpen: setOpenOthers, isOpen: openOthers },
+    ]
 
     return <>
         <Suspense fallback={<LoadingScreen />}>
@@ -24,7 +32,7 @@ export default function Project() {
                         fov: 45,
                         near: 0.1,
                         far: 200,
-                        position: [2.5, 4, 6],
+                        position: [2, 2, 2],
                     }}
                 >
                     <OrbitControls />
@@ -41,6 +49,8 @@ export default function Project() {
             <BackButton />
 
             <HintMessage sentences={roomSentences} />
+
+            <SectionButton buttons={buttons} />
         </Suspense>
     </>
 }
