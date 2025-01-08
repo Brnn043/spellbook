@@ -8,6 +8,7 @@ export const ProjectModal = ({ title, setOpen, data }) => {
     // Image auto-slide functionality
     useEffect(() => {
         const interval = setInterval(() => {
+            if (!data[currentPage].images) return;
             setCurrentImage((prev) =>
                 (prev + 1) % data[currentPage].images.length
             );
@@ -63,7 +64,7 @@ export const ProjectModal = ({ title, setOpen, data }) => {
 
                     {/* Image Slider */}
                     <div className="flex flex-col md:flex-row justify-center items-center space-x-3">
-                        <div className="relative mb-4 flex justify-center items-center max-h-44 md:max-h-80 md:h-auto md:min-h-60 overflow-y-auto md:overflow-hidden bg-slate-200 rounded-xl overflow-hidden">
+                        {data[currentPage].images && <div className="relative mb-4 flex justify-center items-center max-h-44 md:max-h-80 md:h-auto md:min-h-60 overflow-y-auto md:overflow-hidden bg-slate-200 rounded-xl overflow-hidden">
                             <img
                                 src={data[currentPage].images[currentImage]}
                                 alt="Game Image"
@@ -81,7 +82,7 @@ export const ProjectModal = ({ title, setOpen, data }) => {
                                     ></button>
                                 ))}
                             </div>
-                        </div>
+                        </div>}
 
                         {/* Game Description */}
                         <div className="scrollable text-thisBlack rounded text-base font-karla flex-1 overflow-y-scroll max-h-48 md:max-h-96 md:h-auto">
