@@ -3,20 +3,17 @@ import '@/global.css'
 
 export const metadata = {
   title: "Beam's Spellbook",
-  description: 'A minimal starter for Nextjs + React-three-fiber and Threejs.',
+  description: "Welcome to Beam's Spellbook, a mystical portfolio that showcases the artistry and magic behind my work.",
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className='antialiased'>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
+      <head>
+        <link rel="icon" href="/mascot.ico" type="image/x-icon" />
+      </head>
       <body>
-        {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
-        <Layout className>{children}</Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   )
