@@ -62,12 +62,12 @@ export const ProjectModal = ({ title, setOpen, data }) => {
                     </div>
 
                     {/* Image Slider */}
-                    <div className="flex flex-row justify-center items-center space-x-3">
-                        <div className="relative mb-4 flex justify-center items-center h-64 bg-slate-200 rounded-xl overflow-hidden">
+                    <div className="flex flex-col md:flex-row justify-center items-center space-x-3">
+                        <div className="relative mb-4 flex justify-center items-center max-h-44 md:max-h-80 md:h-auto md:min-h-60 overflow-y-auto md:overflow-hidden bg-slate-200 rounded-xl overflow-hidden">
                             <img
                                 src={data[currentPage].images[currentImage]}
                                 alt="Game Image"
-                                className="w-60 max-h-72 object-cover rounded"
+                                className="w-60 h-auto object-cover rounded"
                             />
                             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
                                 {data[currentPage].images.map((_, index) => (
@@ -84,11 +84,11 @@ export const ProjectModal = ({ title, setOpen, data }) => {
                         </div>
 
                         {/* Game Description */}
-                        <div className="text-thisBlack rounded text-base font-karla flex-1">
+                        <div className="scrollable text-thisBlack rounded text-base font-karla flex-1 overflow-y-scroll max-h-48 md:max-h-96 md:h-auto">
                             <p>{data[currentPage].description}</p>
 
                             {/* Tags Section */}
-                            <div className="my-3">
+                            <div className="my-3 flex flex-wrap gap-2">
                                 {data[currentPage].tags.map((tag, index) => (
                                     <span key={index} className="text-sm text-gray-600 mr-2 bg-[#ffeaf8] p-0.5 rounded-sm">#{tag}</span>
                                 ))}

@@ -72,14 +72,31 @@ export const Website = ({ setOpen }) => {
             images: ['/project/CPmon/1.webp', '/project/CPmon/2.webp', '/project/CPmon/3.webp'],
             description: 'This project, built with vanilla JavaScript, lets users join a room, select their CP-Mon, and battle with each other in Vidva Place. I developed the entire frontend, creating an engaging and interactive experience.',
             tags: ['javascript', 'CP-mon'],
-            viewMore: null
+            viewMore: [
+                {
+                    title: 'Github',
+                    link: 'https://github.com/Brnn043/CPmon',
+                    linkTitle: 'our github repo here'
+                },
+            ]
         },
         {
             title: "Astro Mood",
             images: ['/project/AstroMood/1.webp', '/project/AstroMood/2.webp', '/project/AstroMood/3.webp', '/project/AstroMood/4.webp'],
             description: 'A mood tracker with a cosmic star theme where users can input their mood, view their average mood, and explore a graph of mood trends. Built with Next.js, JavaScript, React, and Tailwind CSS.',
             tags: ['moodtracker', 'next.js', 'react', 'tailwindcss'],
-            viewMore: null
+            viewMore: [
+                {
+                    title: 'Website',
+                    link: 'https://astro-mood.vercel.app/',
+                    linkTitle: 'view our website here'
+                },
+                {
+                    title: 'Github',
+                    link: 'https://github.com/Brnn043/AstroMood',
+                    linkTitle: 'my github repo here'
+                },
+            ]
         },
         {
             title: "Evolution of Egg",
