@@ -19,8 +19,6 @@ export default function Character({ position, rotation }) {
 
     useFrame((state, delta) => {
         if (!body.current) return;
-        console.log(animations);
-
     });
 
     return (

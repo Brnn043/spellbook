@@ -3,7 +3,7 @@ import { OrbitControls, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Experience from "@/Activity/Experience";
 import { Work } from "@/components/activity/Modal";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useState } from "react";
 import { BackButton } from "@/components/NavigateButton";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import HintMessage from "@/components/HintMessage";
@@ -22,7 +22,8 @@ export default function Activity() {
                             fov: 45,
                             near: 0.1,
                             far: 200,
-                            position: [2.5, 4, 6],
+                            // position: [2.5, 4, 6],
+                            position: [2, 2, 2]
                         }}
                     >
                         <OrbitControls />
