@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/mascot.ico" type="image/x-icon" />
       </head>
-      <body>
+      <body className='select-none'>
         <Layout>{children}</Layout>
       </body>
     </html>
