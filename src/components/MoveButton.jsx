@@ -45,7 +45,7 @@ export default function MoveButton({ setControls }) {
                 className={`font-karla w-28 h-12 flex items-center justify-center text-center text-lg ${isLeftPressed ? 'bg-gradientcustom border-white' : 'bg-gradientcustom2 border-thisBlack'
                     } text-thisBlack border-2 rounded-full relative overflow-hidden focus:outline-none transition-all duration-200`}
             >
-                <span className="relative z-10">Left</span>
+                <span className="select-none relative z-10">Left</span>
             </button>
 
             {/* Right Button */}
@@ -62,7 +62,7 @@ export default function MoveButton({ setControls }) {
                 className={`font-karla w-28 h-12 flex items-center justify-center text-center text-lg ${isRightPressed ? 'bg-gradientcustom border-white' : 'bg-gradientcustom2 border-thisBlack'
                     } text-thisBlack border-2 rounded-full relative overflow-hidden focus:outline-none transition-all duration-200`}
             >
-                <span className="relative z-10">Right</span>
+                <span className="select-none relative z-10">Right</span>
             </button>
 
             <style jsx>{`
