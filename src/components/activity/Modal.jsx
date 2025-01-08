@@ -46,7 +46,7 @@ export const Work = ({ setOpen }) => {
             ]
         },
         {
-            title: "Teaching Assistance of Programing methodology I",
+            title: "Teaching Assistance of Programming methodology I",
             images: null,
             description: ['In Programming Methodology I, students learn Java and Object-Oriented Programming (OOP), with a project as part of the curriculum. As a teaching assistant, I supported the professor by answering student questions, assisting with teaching, and designing the actual midterm and final exams.', 'This experience deepened my understanding of OOP and significantly improved my communication skills.'],
             tags: ['OOP', 'Java', 'Javafx'],
